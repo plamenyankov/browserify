@@ -5,6 +5,7 @@ var taskRenderer = require('./renderers/taskRenderer');
 
 exports.add = function(){
   taskRenderer.renderNew();
+
 };
 exports.remove = function(clickEvent) {
     var taskElement = clickEvent.target;
@@ -12,8 +13,9 @@ exports.remove = function(clickEvent) {
 };
 
 exports.clear = function() {
-    taskData.clear();
+    taskData.clears();
     exports.render();
+
 };
 
 exports.save = function() {
