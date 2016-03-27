@@ -1,13 +1,9 @@
 var $ = require('jquery');
-var taskTemplate = '<li class="task"><input class="complete" type="checkbox" /> <input class="description" type="text" placeholder="Enter task description..." /> <button class="delete-button">Delete</button></li>';
+var taskTemplate = require('../../templates/tasks.hbs');
 
 function _renderTask(task) {
-    var $task = $(taskTemplate);
-    if(task.complete) {
-        $task.find(".complete").attr("checked", "checked");
-    }
-    $task.find(".description").val(task.description);
-    return $task;
+
+    return $(taskTemplate(task));
 }
 
 exports.renderTasks = function(tasks) {
